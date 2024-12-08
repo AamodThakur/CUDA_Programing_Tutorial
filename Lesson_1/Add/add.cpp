@@ -14,7 +14,7 @@ void add(int n, float *x, float *y)
 
 int main()
 {
-    int N = 1<<25; //1M elements
+    int N = 1<<29; //1M elements
     struct timespec start, end;
 
     float *x = new float[N];  
