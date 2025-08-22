@@ -53,7 +53,7 @@ int main()
     int blockSize = 1024;       //1024 because thats's maximum thread per block
     int numBlocks = (N + blockSize - 1)/blockSize;
 
-    std::cout << N << std::endl << numBlocks << std::endl;
+    std::cout << "Array Size:" << N << std::endl << "Num of Blocks" << numBlocks << std::endl;
 
     start = get_timespec();
     //Run on GPU; Launch the kernel to execute the function on GPU
