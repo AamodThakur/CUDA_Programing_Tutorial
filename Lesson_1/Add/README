@@ -1,6 +1,8 @@
 ### Running Simple Addition of two arrays on CPU 
 1. Compile C++ Code Running on CPU
-`gcc add.cpp -o add_c`
+```sh
+gcc add.cpp -o add_c
+```
 
 2. Run 
 `./add_c`
