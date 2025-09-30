@@ -7,11 +7,29 @@
 Here, we have 8 rows i.e. our tokens & we have 2 columns i.e. our embedding size($d_{model}$)
 '1a' represents first embedding of first token and '1b' second embedding of first tokens.
 
-**Assuming:** Window Size is 2. 
+**Assuming:** Window Size is 2, Number of Heads/Attention heads is 1 and Batch Size is 1.
+
+Dimension of Q,K,V is [Batch Size, Sequence_Length, Number of Head, Embedding Dimension $d_{model}$] i.e. In this example [1, 8, 1, 2]
 
 **Objective:** Our Final Attention Matrix 'S' i.e. $S = Q*K^T$ should look like,
 
+<img width="200" height="157" alt="image" src="https://github.com/user-attachments/assets/0ca175df-350c-4f5c-a046-55fab23ab097" />
 
+'11' represents first token multiplied with the first token. '21' represents second token multiplied with first token.
+Causal Mask is not applied here. 
+
+Similar to, 
+
+<img width="400" height="347" alt="image" src="https://github.com/user-attachments/assets/4b1f3375-ef26-4546-8b84-381a17aa3b25" />
+
+**Algorithm:** Using loops will consume more time than traditional self attention.
+
+1. Calculate number of chunks (C)
+```
+C = Sequence_Length // 2 - 1 = 8 // 2 - 1 = 3
+```
+
+2. 
 
 ### Refrences
 ```
