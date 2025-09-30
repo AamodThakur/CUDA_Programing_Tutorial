@@ -1,5 +1,18 @@
 ### Longformer Slidding Window Algorithm
 
+**Given:** Let we have 8 tokens and for simplicity we have 2 embedding size($d_{model}$)
+
+<img width="80" height="98" alt="image" src="https://github.com/user-attachments/assets/fbd4854f-7672-4070-973e-451c0363e404" />
+
+Here, we have 8 rows i.e. our tokens & we have 2 columns i.e. our embedding size($d_{model}$)
+'1a' represents first embedding of first token and '1b' second embedding of first tokens.
+
+**Assuming:** Window Size is 2. 
+
+**Objective:** Our Final Attention Matrix 'S' i.e. $S = Q*K^T$ should look like,
+
+
+
 ### Refrences
 ```
 1. @misc{beltagy2020longformerlongdocumenttransformer,
