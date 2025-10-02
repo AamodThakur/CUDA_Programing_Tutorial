@@ -30,13 +30,19 @@ Similar to,
 C = Sequence_Length // w - 1 = 8 // 2 - 1 = 3
 ```
 
-2. Reshape Q, K, V to [Batch Size * Number of Head, Sequence Length, $d_{model}$]
+2. Reshape Q, K, V to [Batch Size * Number of Head, Sequence Length, $d_{model}$] i.e. [1, 8, 2]
 
-3. Review Dimension of Q and K to [Batch Size * Number of Head, Chunk, 2*w, $d_model}$]  --> Output of _chunk() function from https://github.com/allenai/longformer/blob/master/longformer/sliding_chunks.py
+3. Alter Q and K to [Batch Size * Number of Head, Chunk, 2*w, $d_model}$] i.e. [1, 3, 4, 2] --> Output of _chunk() function from https://github.com/allenai/longformer/blob/master/longformer/sliding_chunks.py
+
+<img width="201" height="257" alt="image" src="https://github.com/user-attachments/assets/08b18110-273d-4b85-b205-88e8d443d3a1" />
+
+Orange segreation represents different chunks. Here we have copied last 'w' rows from the previous chunk to the current chunk i.e. overlap of w.
+
+4. Multiply Q and K'. i.e. Q[b,c,w,d] X K'[b,c,d,w] = QK'[b,c,w,w]
 
 
 
-4. 
+5. 
 
 ### Refrences
 ```
