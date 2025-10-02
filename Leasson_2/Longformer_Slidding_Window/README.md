@@ -2,8 +2,9 @@
 
 **Given:** Let we have 8 tokens and for simplicity we have 2 embedding size($d_{model}$)
 
-<img width="80" height="98" alt="image" src="https://github.com/user-attachments/assets/fbd4854f-7672-4070-973e-451c0363e404" />
+<img width="316" height="125" alt="image" src="https://github.com/user-attachments/assets/e299d222-f2d9-4188-9104-bd575685499b" />
 
+First, Second and Third matrices in above image are Q, K, V matrix respectively.
 Here, we have 8 rows i.e. our tokens & we have 2 columns i.e. our embedding size($d_{model}$)
 '1a' represents first embedding of first token and '1b' second embedding of first tokens.
 
@@ -26,10 +27,16 @@ Similar to,
 
 1. Calculate number of chunks (C)
 ```
-C = Sequence_Length // 2 - 1 = 8 // 2 - 1 = 3
+C = Sequence_Length // w - 1 = 8 // 2 - 1 = 3
 ```
 
-2. 
+2. Reshape Q, K, V to [Batch Size * Number of Head, Sequence Length, $d_{model}$]
+
+3. Review Dimension of Q and K to [Batch Size * Number of Head, Chunk, 2*w, $d_model}$]  --> Output of _chunk() function from https://github.com/allenai/longformer/blob/master/longformer/sliding_chunks.py
+
+
+
+4. 
 
 ### Refrences
 ```
