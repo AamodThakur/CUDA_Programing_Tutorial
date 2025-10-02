@@ -40,7 +40,7 @@ Orange segreation represents different chunks. Here we have copied last 'w' rows
 
 4. Multiply Q and K'. i.e. Q[b,c,w,d] X K'[b,c,d,w] = QK'[b,c,w,w]
 
-
+<img width="160" height="258" alt="image" src="https://github.com/user-attachments/assets/a65c4284-59ce-404f-8351-958889279c45" />
 
 5. 
 
