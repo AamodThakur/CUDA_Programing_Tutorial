@@ -38,7 +38,7 @@ C = Sequence_Length // w - 1 = 8 // 2 - 1 = 3
 
 Orange segreation represents different chunks. Here we have copied last 'w' rows from the previous chunk to the current chunk i.e. overlap of w.
 
-4. Multiply Q and K'. i.e. Q[b,c,w,d] X K'[b,c,d,w] = QK'[b,c,w,w]
+4. Multiply Q and K'. i.e. Q[b,c,w,d] X K'[b,c,d,w] = chunk_attn(variable from github code) = QK'[b,c,w,w]
 
 <img width="160" height="258" alt="image" src="https://github.com/user-attachments/assets/a65c4284-59ce-404f-8351-958889279c45" />
 
